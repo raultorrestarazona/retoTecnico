@@ -3,4 +3,31 @@
   <groupId>com.ejemplo</groupId>
   <artifactId>retoTecnico</artifactId>
   <version>1.0.0</version>
+  
+  <dependencies>
+    <!-- JUnit 5 API -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit 5 Engine (para ejecutar las pruebas) -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- Para compatibilidad con JUnit 4 (solo si es necesario) -->
+    <dependency>
+        <groupId>org.junit.vintage</groupId>
+        <artifactId>junit-vintage-engine</artifactId>
+        <version>5.7.0</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
 </project>
