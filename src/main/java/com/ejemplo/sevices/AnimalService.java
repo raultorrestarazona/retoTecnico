@@ -10,15 +10,16 @@ import com.ejemplo.models.TipoAnimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
+
 public class AnimalService {
-	public Map<String, List<Animal>> agruparPorTipo(List<String> entradas) {
-        List<Animal> animales = new ArrayList<>();
-        
-        for (String entrada : entradas) {
-            String[] datos = entrada.split("\\|");
-            String nombre = datos[0];
-            TipoAnimal tipo = TipoAnimal.valueOf(datos[1]);
-            String sonido = datos[2];
+	 public Map<String, List<Animal>> agruparPorTipo(List<String> entradas) {
+	        List<Animal> animales = new ArrayList<>();
+	        
+	        for (String entrada : entradas) {
+	            String[] datos = entrada.split("\\|");
+	            String nombre = datos[0];
+	            TipoAnimal tipo = TipoAnimal.valueOf(datos[1]);
+	            String sonido = datos[2];
             
             switch (tipo) {
                 case TERRESTRE:
@@ -30,16 +31,13 @@ public class AnimalService {
                          animales.add(new Gato(nombre));
                      }
                      break;
-                case ACUATICO:
-                    animales.add(new Pez(nombre));
-                    break;
-                case VOLADOR:
-                    animales.add(new Aguila(nombre));
-                    break;
+                case ACUATICO: animales.add(new Pez(nombre)); break;
+                case VOLADOR: animales.add(new Aguila(nombre)); break;
             }
-        }
+	   }
+         // Agrupar por tipo usando el nombre del tipo (String) del enum TipoAnimal
+            return animales.stream()
+                    .collect(Collectors.groupingBy(Animal::obtenerTipo));
+	}
+}
 
-        return animales.stream()
-                .collect(Collectors.groupingBy(Animal::obtenerTipo));
-}
-}

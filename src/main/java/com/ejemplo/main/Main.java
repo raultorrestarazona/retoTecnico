@@ -4,17 +4,18 @@ import java.util.List;
 import java.util.Map;
 
 import com.ejemplo.models.Animal;
+
 import com.ejemplo.sevices.AnimalService;
 
 public class Main {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
         AnimalService service = new AnimalService();
         
         // Entrada de ejemplo (nombre|tipo|sonido)
         List<String> entradas = List.of(
                 "Perro|TERRESTRE|Guau",
                 "Pez|ACUATICO|Blub",
-                "Aguila|VOLADOR|Graa",
+                "Águila|VOLADOR|Graa",
                 "Gato|TERRESTRE|Miau"
         );
         
@@ -28,3 +29,4 @@ public class Main {
         });
     }
 }
+
